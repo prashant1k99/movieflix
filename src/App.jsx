@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { serverClient, apiWrapper } from "./utils"
+import { useState } from "react"
+import { serverClient } from "./utils"
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('game-of-thrones')

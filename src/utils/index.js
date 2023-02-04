@@ -1,7 +1,6 @@
-import { serverClient, apiWrapper } from "./axios"; 
+import { serverClient } from "./axios"; 
 
 
 export {
   serverClient,
-  apiWrapper
 }

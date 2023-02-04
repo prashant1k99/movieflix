@@ -49,13 +49,6 @@ const serverClient = () => {
   return axiosInstance
 }
 
-const apiWrapper = async (axiosInstance) => {
-  const data = await axiosInstance.call()
-  console.log(data)
-  return data
-}
-
 export {
   serverClient,
-  apiWrapper
 }
