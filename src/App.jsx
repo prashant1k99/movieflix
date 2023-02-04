@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Chip from "./component/Chips"
 import { serverClient } from "./utils"
 
 function App() {
@@ -8,10 +9,9 @@ function App() {
   }
   return (
     <div className="App">
-      Hello World!
-      <button onClick={fetchData}>
-        Fetch
-      </button>
+      <Chip>
+        Hello
+      </Chip>
     </div>
   )
 }
