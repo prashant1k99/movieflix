@@ -7,7 +7,7 @@ const serverClient = () => {
     baseURL: !isProd() ? 'https://api.themoviedb.org/3' : '/api'
   })
 
-  axiosInstance.interceptors.request.use(async (requestConfig) => {
+  axiosInstance.interceptors.request.use((requestConfig) => {
     if(!isProd()){
       requestConfig.params = {
         api_key: API_KEY
