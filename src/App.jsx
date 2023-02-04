@@ -1,19 +1,22 @@
-import { useState } from "react"
-import { serverClient } from "./utils"
+import { useState } from "react";
+import ImageCard from "./component/Image";
+import { serverClient } from "./utils";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('game-of-thrones')
+  const [searchQuery, setSearchQuery] = useState("game-of-thrones");
+  const [data, setData] = useState([]);
   const fetchData = async () => {
-    const data = await serverClient().get(`/search/multi?query=${searchQuery}`).catch(err => console.log(err))
-  }
+    const data = await serverClient()
+      .get(`/search/multi?query=${searchQuery}`)
+      .catch((err) => console.log(err));
+    setData(data.results);
+  };
+
   return (
     <div className="App">
-      Hello World!
-      <button onClick={fetchData}>
-        Fetch
-      </button>
+      <ImageCard />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
