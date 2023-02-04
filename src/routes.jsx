@@ -5,10 +5,15 @@ import MainLayout from './layout/main'
 const routes = [
   {
     element: <MainLayout />,
+    errorElement: <h1>404</h1>,
     children: [
       {
-        path: '*',
-        element: <h1>Hello</h1>
+        path: '/',
+        element: <App />
+      },
+      {
+        path: '/test',
+        element: <h1>This is test route</h1>
       }
     ]
   }
