@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="flex">
-      { data.filter(el => el.poster_path).map(el => {
+      { data.filter(el => el.poster_path).filter((el, index) => index < 5).map(el => {
         return <ImageCard title={el.name || el.title } imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`} />
       })}
     </div>
