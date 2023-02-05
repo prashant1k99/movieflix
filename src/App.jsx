@@ -12,14 +12,21 @@ function App() {
     setData(data.results);
   };
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   return (
     <div className="flex">
-      { data.filter(el => el.poster_path).map(el => {
-        return <ImageCard title={el.name || el.title } imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`} />
-      })}
+      {data
+        .filter((el) => el.poster_path)
+        .map((el) => {
+          return (
+            <ImageCard
+              title={el.name || el.title}
+              imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+            />
+          );
+        })}
     </div>
   );
 }
