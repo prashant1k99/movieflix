@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <ImageCard />
+      <ImageCard title='Game Of Thrones' imageSrc='https://image.tmdb.org/t/p/w500/7WUHnWGx5OO145IRxPDUkQSh4C7.jpg' />
     </div>
   );
 }
