@@ -7,11 +7,11 @@ const ImageCard = () => {
   );
   useEffect(() => {}, []);
   return (
-    <div className="relative m-2 group rounded-3xl w-48 hover:ease-linear duration-300 hover:scale-105 hover:drop-shadow-2xl">
+    <div className="relative m-2 group rounded-3xl w-48 hover:ease-linear duration-300 hover:scale-105 hover:drop-shadow-m">
       <img className=" rounded-3xl" src={source} />
-      <div className="absolute rounded-3xl opacity-0 bottom-0 left-0 group-hover:transition-transform group-hover:opacity-100 hover:delay-300 duration-300 bg-bottom bg-gradient-to-t from-black">
-        <p className="select-none px-3 pb-4 pt-[100%]">
-          Game of thrones ofasdd game of thrones of game of thrones
+      <div className="absolute w-full rounded-3xl opacity-0 border-radius-0 bottom-0 left-0 group-hover:transition-opacity group-hover:opacity-100 duration-300 bg-bottom bg-gradient-to-t from-black">
+        <p className="select-none px-4 pb-4 pt-[92%] text-xl truncate">
+        Game of thrones ofasdd game of thrones of game of thrones
         </p>
       </div>
     </div>
