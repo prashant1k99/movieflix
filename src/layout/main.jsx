@@ -1,14 +1,7 @@
-import {
-  Outlet
-} from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
 function MainLayout() {
-  return (
-    <div>
-      Layout
-      <Outlet />
-    </div>
-  )
+  return <Outlet />;
 }
 
-export default MainLayout
+export default MainLayout;
