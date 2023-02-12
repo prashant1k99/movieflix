@@ -22,15 +22,14 @@ const Carousel = () => {
       <div className="grid tablet:grid-cols-3 laptop:grid-cols-4 desktop:grid-cols-5">
         {data
           .filter((el) => el.poster_path)
-          .map((el) => {
-            return (
-              <ImageCard
-                className=" m-auto"
-                title={el.name || el.title}
-                imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
-              />
-            );
-          })}
+          .map((el) => (
+            <ImageCard
+              className=" m-auto "
+              title={el.name || el.title}
+              imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+              key={el.id}
+            />
+          ))}
       </div>
     </div>
   );
