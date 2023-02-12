@@ -24,6 +24,7 @@ const Carousel = () => {
                 <ImageCard
                   title={el.name || el.title}
                   imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+                  key={el.id}
                 />
               </div>
             );
