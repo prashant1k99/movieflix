@@ -13,6 +13,10 @@ module.exports = {
         desktop: "1280px",
         // => @media (min-width: 1280px) { ... }
       },
+      colors: {
+        'primary': '#e01c2c',
+        'secondary': '#FF655D'
+      }
     },
   },
   plugins: [],
