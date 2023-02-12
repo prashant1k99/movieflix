@@ -13,19 +13,22 @@ const Carousel = () => {
     fetchData();
   }, []);
 
+  const handleClick = (e) => {
+    console.log(e);
+  };
+
   return (
-    <div className="place-content-center container border-solid border-x border-white/30 mx-auto max-w-fit min-w-min p-5 bg-white/5">
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+    <div className="place-content-center laptop:container border-solid laptop:border-x border-white/30 mx-auto laptop:max-w-fit p-5 bg-white/5">
+      <div className="grid tablet:grid-cols-3 laptop:grid-cols-4 desktop:grid-cols-5">
         {data
           .filter((el) => el.poster_path)
           .map((el) => {
             return (
-              <div className=" m-auto ">
-                <ImageCard
-                  title={el.name || el.title}
-                  imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
-                />
-              </div>
+              <ImageCard
+                className=" m-auto"
+                title={el.name || el.title}
+                imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+              />
             );
           })}
       </div>

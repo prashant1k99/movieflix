@@ -3,7 +3,8 @@ const ImageCard = ({ title, imageSrc, size, isHoverable = true }) => {
   // TODO handle size prop
   return (
     <div
-      className={`relative m-2 group w-48 h-72 ${
+      // onClick=""
+      className={`relative m-2 group tablet:w-24 tablet:h-36 laptop:w-32 laptop:h-48 desktop:w-48 desktop:h-72 ${
         isHoverable
           ? "hover:ease-linear duration-300 hover:scale-105 hover:drop-shadow-xl"
           : null
@@ -18,7 +19,9 @@ const ImageCard = ({ title, imageSrc, size, isHoverable = true }) => {
               : null
           }`}
         >
-          <p className="select-none px-4 pb-3 pt-[92%] text-xl">{title}</p>
+          <p className="select-none tablet:px-2 tablet:pb-1 laptop:px-3 laptop:pb-2 desktop:px-4 desktop:pb-3 pt-[92%]  tablet:text-sm laptop:text-base desktop:text-lg">
+            {title}
+          </p>
         </div>
       ) : null}
     </div>
