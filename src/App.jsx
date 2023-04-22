@@ -1,25 +1,36 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import Chip from "./component/Chips"
-import { serverClient } from "./utils"
+import { useState, useEffect } from "react";
+import ImageCard from "./component/Image";
+import { serverClient } from "./utils";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('game-of-thrones')
+  // const [searchQuery, setSearchQuery] = useState("game-of-thrones");
+  const [data, setData] = useState([]);
   const fetchData = async () => {
-    const data = await serverClient().get(`/search/multi?query=${searchQuery}`).catch(err => console.log(err))
-  }
+    const data = await serverClient()
+      .get(`/trending/all/day`)
+      .catch((err) => console.log(err));
+    setData(data.results);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App flex space-x-4">
-      <Link className="px-3 py-1 rounded-full border border-slate-800 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-primary transition duration-300 ease focus:outline-none focus:ring-1 focus:border-0 focus:text-primary focus:ring-primary focus:ring-opacity-75" to="/test">TV</Link>
-      <Link className="px-3 py-1 rounded-full border border-slate-800 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-primary transition duration-300 ease focus:outline-none focus:ring-1 focus:border-0 focus:text-primary focus:ring-primary focus:ring-opacity-75" to="/movie">Movie</Link>
-      <Chip>
-        Movie
-      </Chip>
-      <Chip>
-        Categories
-      </Chip>
+    <div className="flex">
+      {data
+        .filter((el) => el.poster_path)
+        .filter((el, index) => index < 5)
+        .map((el) => {
+          return (
+            <ImageCard
+              title={el.name || el.title}
+              imageSrc={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+              key={el.id}
+            />
+          );
+        })}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
