@@ -18,7 +18,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="place-content-center laptop:container border-solid laptop:border-x border-white/30 mx-auto laptop:max-w-fit p-5 bg-white/5">
+    <div className="mx-auto place-content-center border-solid border-white/30 bg-white/5 p-5 laptop:container laptop:max-w-fit laptop:border-x">
       <div className="grid tablet:grid-cols-3 laptop:grid-cols-4 desktop:grid-cols-5">
         {data
           .filter((el) => el.poster_path)
