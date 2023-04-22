@@ -5,9 +5,9 @@ const ImageCard = ({ title, imageSrc, size, isHoverable = true }) => {
     //image container with hover effect if required
     <div
       // onClick=""
-      className={`relative m-2 group tablet:w-24 tablet:h-36 laptop:w-32 laptop:h-48 desktop:w-48 desktop:h-72 ${
+      className={`tablet:w-24 tablet:h-36 laptop:w-32 laptop:h-48 desktop:w-48 desktop:h-72 group relative m-2 ${
         isHoverable
-          ? "hover:ease-linear duration-300 hover:scale-105 hover:drop-shadow-xl"
+          ? "duration-300 hover:scale-105 hover:drop-shadow-xl hover:ease-linear"
           : null
       }`}
     >
@@ -16,14 +16,14 @@ const ImageCard = ({ title, imageSrc, size, isHoverable = true }) => {
       {/* bottom to up gradient div*/}
       {title ? (
         <div
-          className={`absolute w-full rounded-xl border-radius-0 h-full bottom-0 left-0 bg-bottom bg-gradient-to-t from-black ${
+          className={`border-radius-0 absolute bottom-0 left-0 h-full w-full rounded-xl bg-gradient-to-t from-black bg-bottom ${
             isHoverable
-              ? "opacity-0 group-hover:transition-opacity group-hover:opacity-100 duration-300"
+              ? "opacity-0 duration-300 group-hover:opacity-100 group-hover:transition-opacity"
               : null
           }`}
         >
           {/* source title */}
-          <p className="select-none absolute bottom-0 tablet:px-2 tablet:pb-1 laptop:px-3 laptop:pb-2 desktop:px-4 desktop:pb-3 pt-[92%]  tablet:text-sm laptop:text-base desktop:text-lg">
+          <p className="tablet:px-2 tablet:pb-1 laptop:px-3 laptop:pb-2 desktop:px-4 desktop:pb-3 tablet:text-sm laptop:text-base desktop:text-lg absolute  bottom-0 select-none pt-[92%]">
             {title}
           </p>
         </div>
