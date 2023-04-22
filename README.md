@@ -1,4 +1,4 @@
-# MovieFlex
+# MovieFlix
 
 ---
 
